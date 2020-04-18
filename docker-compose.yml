@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  database:
+    image: postgres:11
+    restart: always
+    environment:
+      - POSTGRES_USER=wager
+      - POSTGRES_PASSWORD=wager
+      - POSTGRES_DB=wager
+    ports:
+      - 6000:5432
+    deploy:
+      resources:
+        limits:
+          memory: '512M'
+          cpus: '1'
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even
+
+volumes:
+  database-data:
+
+    # psql --host=database --username=wager --dbname=wager
+
+    # DATABASE_URL=postgres://wager:wager@0.0.0.0:6000/wager
