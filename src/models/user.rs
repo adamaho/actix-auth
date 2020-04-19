@@ -21,13 +21,13 @@ pub struct User {
 #[table_name = "users"]
 pub struct ViewableUser {
     pub id: i32,
-    pub email: String
+    pub email: String,
 }
 
 impl User {
     pub fn find_all_users(conn: &PgConnection) -> Result<Vec<ViewableUser>, ApiError> {
-        use crate::schema::users::{id, email};
         use crate::schema::users::dsl::users;
+        use crate::schema::users::{email, id};
 
         let all_users = users.select((id, email)).load::<ViewableUser>(conn)?;
 
@@ -35,10 +35,13 @@ impl User {
     }
 
     pub fn find_one(user_id: i32, conn: &PgConnection) -> Result<ViewableUser, ApiError> {
-        use crate::schema::users::{id, email};
         use crate::schema::users::dsl::users;
+        use crate::schema::users::{email, id};
 
-        let user = users.find(user_id).select((id, email)).first::<ViewableUser>(conn)?;
+        let user = users
+            .find(user_id)
+            .select((id, email))
+            .first::<ViewableUser>(conn)?;
 
         Ok(user)
     }

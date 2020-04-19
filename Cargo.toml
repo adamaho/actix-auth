@@ -9,6 +9,7 @@ edition = "2018"
 [dependencies]
 actix-web = "2.0"
 actix-rt = "1.0"
+actix-cors = "0.2"
 actix-web-httpauth = "0.4"
 bcrypt = "0.7"
 chrono = { version = "0.4", features = ["serde"] }

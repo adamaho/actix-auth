@@ -2,23 +2,20 @@ use actix_web::web;
 use actix_web::Error;
 
 use crate::controllers::{key, user};
-use crate::utils::token::Token;
 use crate::utils::errors::ApiError;
+use crate::utils::token::Token;
 
 use actix_web::dev::ServiceRequest;
 use actix_web_httpauth::extractors::bearer::BearerAuth;
 use actix_web_httpauth::middleware::HttpAuthentication;
 
 /// Middleware validator used to ensure the provided bearer token is valid
-async fn validator(
-    req: ServiceRequest,
-    credentials: BearerAuth,
-) -> Result<ServiceRequest, Error> {
+async fn validator(req: ServiceRequest, credentials: BearerAuth) -> Result<ServiceRequest, Error> {
     let token = credentials.token();
 
     match Token::decode(&token) {
         Ok(_) => Ok(req),
-        Err(_) => Err(ApiError::Unauthorized.into())
+        Err(_) => Err(ApiError::Unauthorized.into()),
     }
 }
 
@@ -27,7 +24,7 @@ pub fn define_routes(cfg: &mut web::ServiceConfig) {
     let middleware = HttpAuthentication::bearer(validator);
     cfg.service(
         web::resource("/users")
-            .wrap(middleware)
+            // .wrap(middleware)
             .route(web::get().to(user::get)),
     )
     // public routes

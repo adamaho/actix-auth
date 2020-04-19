@@ -1,13 +1,13 @@
 use actix_web::web;
 
 use crate::db::DbPool;
-use crate::models::user::{NewUserForm, LoginUserForm, User};
+use crate::models::user::{LoginUserForm, NewUserForm, User};
 use crate::utils::{errors::ApiError, token::Token};
 
 ///  Returns all users
 pub async fn get(pool: web::Data<DbPool>) -> Result<web::HttpResponse, ApiError> {
     let conn = pool.get()?;
-
+    info!("asdfasdfasdf");
     // get all users
     let users = web::block(move || User::find_all_users(&conn)).await?;
 
@@ -51,4 +51,3 @@ pub async fn login(
         None => Err(ApiError::InvalidLogin),
     }
 }
-

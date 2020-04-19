@@ -49,7 +49,8 @@ impl ResponseError for ApiError {
                 )
                     .into(),
             ),
-            ApiError::Unauthorized => HttpResponse::Unauthorized().header("www-authenticate", "Bearer")
+            ApiError::Unauthorized => HttpResponse::Unauthorized()
+                .header("www-authenticate", "Bearer")
                 .json::<UserErrorResponse>(("UNAUTHORIZED", "Please login to continue").into()),
         }
     }
