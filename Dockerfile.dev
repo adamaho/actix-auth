@@ -1,0 +1,4 @@
+FROM clux/muslrust:latest
+WORKDIR /app
+ADD /target/debug/wager /app/wager
+CMD [ "/app/wager" ]
