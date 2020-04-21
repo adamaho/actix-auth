@@ -1,3 +1,6 @@
+// needed for the musl docker build
+extern crate openssl;
+
 #[macro_use]
 extern crate diesel;
 

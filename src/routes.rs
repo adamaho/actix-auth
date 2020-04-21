@@ -24,7 +24,7 @@ pub fn define_routes(cfg: &mut web::ServiceConfig) {
     let middleware = HttpAuthentication::bearer(validator);
     cfg.service(
         web::resource("/users")
-            // .wrap(middleware)
+            .wrap(middleware)
             .route(web::get().to(user::get)),
     )
     // public routes

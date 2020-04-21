@@ -1,4 +1,9 @@
-FROM debian:bullseye-slim
+FROM clux/muslrust:latest as builder
 WORKDIR /app
-ADD target/debug/wager .
-CMD ["/app/wager"]
+ADD . .
+RUN cargo build --release
+
+
+FROM scratch
+COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/wager /app/wager
+ENTRYPOINT ["/app/wager"]
