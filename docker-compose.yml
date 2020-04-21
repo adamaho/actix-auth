@@ -19,7 +19,8 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: Dockerfile.dev
     depends_on:
       - database
     environment:

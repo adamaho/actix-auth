@@ -1,4 +1,4 @@
-FROM clux/muslrust:latest
+FROM rust:1.41
 WORKDIR /app
 ADD /target/debug/wager /app/wager
 CMD [ "/app/wager" ]
