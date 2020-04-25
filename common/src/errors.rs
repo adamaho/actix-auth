@@ -172,7 +172,7 @@ impl From<ValidationErrors> for ApiError {
                         codes.push(e.code.to_string());
                     }
                 }
-                _ => error!("Unhandled validation of kind: {:?}", kind),
+                _ => println!("Unhandled validation of kind: {:?}", kind),
             }
         }
 

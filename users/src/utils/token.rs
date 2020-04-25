@@ -2,9 +2,9 @@ use jsonwebtoken::{decode, encode, DecodingKey, EncodingKey, Header, Validation}
 use serde::{Deserialize, Serialize};
 use std::env;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use common::errors::ApiError;
 
 use crate::models::user::User;
-use crate::utils::errors::ApiError;
 
 /// Represents the contents of a jwt
 #[derive(Debug, Serialize, Deserialize)]

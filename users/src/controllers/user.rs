@@ -1,8 +1,9 @@
 use actix_web::web;
+use common::errors::ApiError;
 
 use crate::db::DbPool;
 use crate::models::user::{LoginUserForm, NewUserForm, User};
-use crate::utils::{errors::ApiError, token::Token};
+use crate::utils::token::Token;
 
 ///  Returns all users
 pub async fn get(pool: web::Data<DbPool>) -> Result<web::HttpResponse, ApiError> {

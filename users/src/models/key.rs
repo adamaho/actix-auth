@@ -1,10 +1,10 @@
 use diesel::pg::PgConnection;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use common::errors::ApiError;
 
 use crate::models::user::User;
 use crate::schema::keys;
-use crate::utils::errors::ApiError;
 
 /// Database representation of a Beta Key
 #[derive(Identifiable, Insertable, Queryable, Serialize, Debug)]

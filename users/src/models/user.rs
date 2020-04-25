@@ -2,9 +2,9 @@ use diesel::pg::PgConnection;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use validator::Validate;
+use common::errors::ApiError;
 
 use crate::schema::users;
-use crate::utils::errors::ApiError;
 
 /// Database representation of a User
 #[derive(Identifiable, Queryable, PartialEq, Associations, Serialize, Debug)]
