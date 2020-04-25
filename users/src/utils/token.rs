@@ -29,7 +29,7 @@ impl Token {
         Token {
             sub: user.id.clone(),
             email: user.email.clone(),
-            company: "wager".to_string(),
+            company: "tallii".to_string(),
             iat,
             exp,
         }
@@ -37,7 +37,7 @@ impl Token {
 
     /// Decodes the provided token to the Token struct
     pub fn decode(token: &str) -> Result<jsonwebtoken::TokenData<Token>, ApiError> {
-        let secret = env::var("WAGER_SECRET").expect("secret has not been defined");
+        let secret = env::var("TALLII_USERS_SECRET").expect("secret has not been defined");
         let token = decode::<Token>(
             &token,
             &DecodingKey::from_secret(secret.as_ref()),
@@ -56,7 +56,7 @@ impl Token {
 
     /// Encodes the provided token struct to a string
     pub fn encode(&self) -> String {
-        let secret = env::var("WAGER_SECRET").expect("secret has not been defined");
+        let secret = env::var("TALLII_USERS_SECRET").expect("secret has not been defined");
         encode(
             &Header::default(),
             self,

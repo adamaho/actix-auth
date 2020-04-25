@@ -36,6 +36,8 @@ services:
 volumes:
   database-data:
 
-    # psql --host=database --username=wager --dbname=wager
+    # psql --host=database --username=users --dbname=users
 
-    # DATABASE_URL=postgres://wager:wager@0.0.0.0:6000/wager
+    # export DATABASE_URL=postgres://users:users@0.0.0.0:6000/users
+
+    # export TALLII_USERS_SECRET=asdfasdf

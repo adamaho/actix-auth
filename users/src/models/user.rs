@@ -114,7 +114,7 @@ impl NewUserForm {
                 .get_result(conn)
             {
                 Ok(u) => return Ok(u),
-                // if the same key is reused
+                // TODO: handle case where user with email already exists
                 Err(_) => return Err(ApiError::InvalidBetaKey),
             }
         }
