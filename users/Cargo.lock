@@ -1776,6 +1776,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "users"
+version = "0.1.0"
+dependencies = [
+ "actix-cors",
+ "actix-rt",
+ "actix-web",
+ "actix-web-httpauth",
+ "bcrypt",
+ "chrono",
+ "diesel",
+ "dotenv",
+ "env_logger",
+ "failure",
+ "failure_derive",
+ "jsonwebtoken",
+ "log",
+ "openssl",
+ "r2d2",
+ "serde",
+ "serde_json",
+ "uuid",
+ "validator",
+ "validator_derive",
+]
+
+[[package]]
 name = "uuid"
 version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1821,32 +1847,6 @@ name = "vcpkg"
 version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fc439f2794e98976c88a2a2dafce96b930fe8010b0a256b3c2199a773933168"
-
-[[package]]
-name = "wager"
-version = "0.1.0"
-dependencies = [
- "actix-cors",
- "actix-rt",
- "actix-web",
- "actix-web-httpauth",
- "bcrypt",
- "chrono",
- "diesel",
- "dotenv",
- "env_logger",
- "failure",
- "failure_derive",
- "jsonwebtoken",
- "log",
- "openssl",
- "r2d2",
- "serde",
- "serde_json",
- "uuid",
- "validator",
- "validator_derive",
-]
 
 [[package]]
 name = "wasi"

@@ -4,9 +4,9 @@ services:
     image: postgres:11
     restart: always
     environment:
-      - POSTGRES_USER=wager
-      - POSTGRES_PASSWORD=wager
-      - POSTGRES_DB=wager
+      - POSTGRES_USER=users
+      - POSTGRES_PASSWORD=users
+      - POSTGRES_DB=users
     ports:
       - 6000:5432
     deploy:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://wager:wager@database/wager
+      DATABASE_URL: postgres://users:users@database/users
       WAGER_SECRET: asdfasdf
     deploy:
       resources:

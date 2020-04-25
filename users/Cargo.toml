@@ -1,5 +1,5 @@
 [package]
-name = "wager"
+name = "users"
 version = "0.1.0"
 authors = ["adamaho <aaho.public@gmail.com>"]
 edition = "2018"
