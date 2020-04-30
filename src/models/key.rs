@@ -1,8 +1,8 @@
 use diesel::pg::PgConnection;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
-use common::errors::ApiError;
 
+use crate::utils::errors::ApiError;
 use crate::models::user::User;
 use crate::schema::keys;
 

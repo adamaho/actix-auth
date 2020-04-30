@@ -1,8 +1,8 @@
 use actix_web::web;
-use common::errors::ApiError;
 
 use crate::db::DbPool;
 use crate::models::key::{CheckKeyForm, Key};
+use crate::utils::errors::ApiError;
 
 ///  Creates a user in the database
 pub async fn check_key(

@@ -1,7 +1,7 @@
 use actix_web::web;
 use actix_web::Error;
-use common::errors::ApiError;
 
+use crate::utils::errors::ApiError;
 use crate::controllers::{key, user};
 use crate::utils::token::Token;
 
