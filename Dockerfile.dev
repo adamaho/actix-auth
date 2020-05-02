@@ -1,4 +1,4 @@
 FROM rust:1.41
 WORKDIR /app
-ADD /target/debug/wager /app/wager
-CMD [ "/app/wager" ]
+ADD /target/debug/server /app/server
+CMD [ "/app/server" ]
