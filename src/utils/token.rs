@@ -29,7 +29,7 @@ impl Token {
         Token {
             sub: user.id.clone(),
             email: user.email.clone(),
-            company: "tallii".to_string(),
+            company: "my_company".to_string(),
             iat,
             exp,
         }
