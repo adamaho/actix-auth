@@ -40,4 +40,4 @@ volumes:
 
     # export DATABASE_URL=postgres://users:users@0.0.0.0:6000/users
 
-    # export TALLII_USERS_SECRET=asdfasdf
+    # export USERS_SECRET=my_secret
